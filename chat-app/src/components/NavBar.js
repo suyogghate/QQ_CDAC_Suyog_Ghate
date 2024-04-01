@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {auth} from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
 
 const NavBar = () => {
@@ -9,7 +9,7 @@ const NavBar = () => {
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    signInWithPopup(auth, provider);
   };
 
   const signOut = () => {
